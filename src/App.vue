@@ -1,32 +1,35 @@
+<!-- Template -->
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+<div>
+  <v-app>
+    <v-toolbar dense  height="80px" dark >
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+
+      <v-toolbar-title>Rick & Morty</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-btn ><router-link :to="{ name: 'Inicio' }" class="linkNav" style="text-decoration:none" >Inicio</router-link></v-btn>
+      <v-btn ><router-link :to="{ name: 'Buscar' }" class="linkNav" style="text-decoration:none" >Buscar</router-link></v-btn>
+      <v-btn ><router-link :to="{ name: 'About' }" class="linkNav" style="text-decoration:none" >About</router-link></v-btn>
+    </v-toolbar>
+    <router-view class="contenidoPagina"></router-view>
+ 
+  </v-app>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<!-- Script -->
+<script>
+export default {
+  name: "App",
+};
+</script>
+
+<!-- Style -->
+<style scoped>
+.linkNav {
+  color: white;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>
